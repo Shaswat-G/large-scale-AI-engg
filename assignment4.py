@@ -131,26 +131,74 @@ def single_step_with_grad_accumulation(seed=42, device="cuda", accumulation_step
     optimizer.step()
     
     return model.W.detach()
+
+
+def data_parallel_single_step(seed=42, device="cuda"):
+    
+    torch.manual_seed(seed)
+    initial_weight = torch.randn(input_dim, output_dim)
+    model = CustomLinearLayer(initial_weight).to(device)
+    optimizer = optim.SGD(model.parameters(), lr=0.5)
+    loss_fn = nn.MSELoss(reduction="mean")
+    inputs, targets = create_batch(global_batch_size, input_dim, output_dim, seed=seed, device=device)
+    check(inputs, [global_batch_size, input_dim])
+    check(targets, [global_batch_size, output_dim])
+    
+    full_inputs, full_targets = create_batch(batch_size=global_batch_size, input_dim=input_dim, output_dim=output_dim, seed=seed, device=device)
+    
+    start_idx = rank * local_batch_size
+    end_idx = start_idx + local_batch_size
+    
+    local_inputs = full_inputs[start_idx:end_idx]
+    local_targets = full_targets[start_idx:end_idx]
+    
+    check(local_inputs, [local_batch_size, input_dim])
+    check(local_targets, [local_batch_size, output_dim])
+    
+    optimizer.zero_grad()
+    local_outputs = model(local_inputs)
+    check(local_outputs, [local_batch_size, output_dim])
+    
+    local_loss = loss_fn(local_outputs, local_targets)
+    check(local_loss, [])
+    
+    local_loss.backward()
+    
+    # sync gradients across all ranks using all_reduce
+    for param in model.parameters():
+        dist.all_reduce(param.grad.data, op=dist.ReduceOp.SUM)
+        param.grad.div_(world_size)
+        
+    optimizer.step()
+    
+    return model.W.detach()
     
     
 if rank == 0:
     # Rank 0 does the single-step baseline:
-    print(f"[Rank {rank}] Compute the updated weight using batch accumulation. They should match.")
+    print(f"[Rank {rank}] Compute the updated matrix which should be different from the initial weight matrix.")
     initial_weight, updated_weight = single_step()
     compare_tensors(initial_weight, updated_weight.cpu())
 else:
     # On all other ranks, create a placeholder for the final weight
     updated_weight = torch.zeros(input_dim, output_dim, device="cuda")
 
-# Distribute updated_weight to all ranks so they can compare to the baseline
+# Distribute updated_weight to all ranks so they can compare with single-step approach
 dist.broadcast(updated_weight, src=0)
 
 if rank == 0:
     print(f"[Rank {rank}] Compute the updated weight using batch accumulation. They should match.")
     batch_accum_weight = single_step_with_grad_accumulation()
-    # Compare the weight from the single-step approach
+    # Compare with single-step approach
     compare_tensors(updated_weight.cpu(), batch_accum_weight.cpu())
 
-# Cleanup
+if rank == 0:
+    print(f"[Rank {rank}] Compute the updated weight using data parallelism.")
+data_parallel_weight = data_parallel_single_step()
+
+# Compare on all ranks to the baseline `updated_weight` from single_step
+compare_tensors(updated_weight.cpu(), data_parallel_weight.cpu(), prefix="DataParallel")
+
+
 dist.destroy_process_group()
 print(f"[Rank {rank}] done")
