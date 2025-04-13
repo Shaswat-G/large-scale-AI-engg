@@ -15,7 +15,7 @@ rank, local_rank, world_size = init_distributed()
 global_batch_size = 128  # Must be divisible by world size
 local_batch_size = global_batch_size // world_size
 input_dim = 64
-ouput_dim = 32
+output_dim = 32
 seed = 42
 
 
@@ -60,7 +60,7 @@ def single_step(seed = 42, device = "cuda") -> torch.Tensor:
     torch.manual_seed(seed)
     
     # Generate a weight matrix
-    initial_weight = torch.randn(input_dim, ouput_dim)
+    initial_weight = torch.randn(input_dim, output_dim)
     
     # create custom linera model
     model = CustomLinearLayer(initial_weight).to(device)
@@ -72,19 +72,19 @@ def single_step(seed = 42, device = "cuda") -> torch.Tensor:
     loss_fn = nn.MSELoss(reduction="mean")
     
     # create a synthetic batch of data with gloabl_batch_size
-    inputs, targets = create_batch(global_batch_size, input_dim, ouput_dim, seed=seed, device=device)
+    inputs, targets = create_batch(global_batch_size, input_dim, output_dim, seed=seed, device=device)
     check(inputs, [global_batch_size, input_dim])
-    check(targets, [global_batch_size, ouput_dim])
+    check(targets, [global_batch_size, output_dim])
     
     # Forward pass
     outputs = model(inputs)
-    check(outputs, [global_batch_size, ouput_dim])
+    check(outputs, [global_batch_size, output_dim])
     
     # Compute MSE Loss
     loss = loss_fn(outputs, targets)
     check(loss, [1])
     
-    # Reser gradients
+    # Reset gradients
     optimizer.zero_grad()
     
     # Compute gradients
@@ -96,3 +96,21 @@ def single_step(seed = 42, device = "cuda") -> torch.Tensor:
     # return updated weights detached from the graph
     return initial_weight, model.W.detach()    
     
+    
+    
+if rank == 0:
+    # Rank 0 does the single-step baseline:
+    print(f"[Rank {rank}] Compute the updated matrix which should be different from the initial weight matrix.")
+    initial_weight, updated_weight = single_step()
+    compare_tensors(initial_weight, updated_weight.cpu())
+else:
+    # On all other ranks, create a placeholder for the final weight
+    updated_weight = torch.zeros(input_dim, output_dim, device="cuda")
+
+# Distribute updated_weight to all ranks so they can compare to the baseline
+dist.broadcast(updated_weight, src=0)
+
+
+# Cleanup
+dist.destroy_process_group()
+print(f"[Rank {rank}] done")
