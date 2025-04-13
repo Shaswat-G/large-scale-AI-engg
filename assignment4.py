@@ -49,3 +49,50 @@ class CustomLinearLayer(nn.Module):
         
         check(X, [local_bsz, self.out_dim])
         return X
+    
+    
+def single_step(seed = 42, device = "cuda") -> torch.Tensor:
+    """
+    Educational example of performing a single gradient step
+    """
+    
+    # set seed
+    torch.manual_seed(seed)
+    
+    # Generate a weight matrix
+    initial_weight = torch.randn(input_dim, ouput_dim)
+    
+    # create custom linera model
+    model = CustomLinearLayer(initial_weight).to(device)
+    
+    # Set up SGD optimizer with lr 0.5
+    optimizer = optim.SGD(model.parameters(), lr=0.5)
+    
+    # Create Loss function
+    loss_fn = nn.MSELoss(reduction="mean")
+    
+    # create a synthetic batch of data with gloabl_batch_size
+    inputs, targets = create_batch(global_batch_size, input_dim, ouput_dim, seed=seed, device=device)
+    check(inputs, [global_batch_size, input_dim])
+    check(targets, [global_batch_size, ouput_dim])
+    
+    # Forward pass
+    outputs = model(inputs)
+    check(outputs, [global_batch_size, ouput_dim])
+    
+    # Compute MSE Loss
+    loss = loss_fn(outputs, targets)
+    check(loss, [1])
+    
+    # Reser gradients
+    optimizer.zero_grad()
+    
+    # Compute gradients
+    loss.backward()
+    
+    # Parameter update
+    optimizer.step()
+    
+    # return updated weights detached from the graph
+    return initial_weight, model.W.detach()    
+    
