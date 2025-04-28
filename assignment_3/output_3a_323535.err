@@ -1,0 +1,24 @@
+slurmstepd: error: couldn't chdir to `/workspace': No such file or directory: going to /tmp instead
+slurmstepd: error: couldn't chdir to `/workspace': No such file or directory: going to /tmp instead
+slurmstepd: error: couldn't chdir to `/workspace': No such file or directory: going to /tmp instead
+slurmstepd: error: couldn't chdir to `/workspace': No such file or directory: going to /tmp instead
+slurmstepd: error: couldn't chdir to `/workspace': No such file or directory: going to /tmp instead
+slurmstepd: error: couldn't chdir to `/workspace': No such file or directory: going to /tmp instead
+slurmstepd: error: couldn't chdir to `/workspace': No such file or directory: going to /tmp instead
+slurmstepd: error: couldn't chdir to `/workspace': No such file or directory: going to /tmp instead
+W0401 04:57:28.089000 198817 torch/distributed/run.py:792] 
+W0401 04:57:28.089000 198817 torch/distributed/run.py:792] *****************************************
+W0401 04:57:28.089000 198817 torch/distributed/run.py:792] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0401 04:57:28.089000 198817 torch/distributed/run.py:792] *****************************************
+W0401 04:57:35.606000 253322 torch/distributed/run.py:792] 
+W0401 04:57:35.606000 253322 torch/distributed/run.py:792] *****************************************
+W0401 04:57:35.606000 253322 torch/distributed/run.py:792] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0401 04:57:35.606000 253322 torch/distributed/run.py:792] *****************************************
+W0401 04:57:35.612000 72354 torch/distributed/run.py:792] 
+W0401 04:57:35.612000 72354 torch/distributed/run.py:792] *****************************************
+W0401 04:57:35.612000 72354 torch/distributed/run.py:792] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0401 04:57:35.612000 72354 torch/distributed/run.py:792] *****************************************
+W0401 04:57:35.712000 19497 torch/distributed/run.py:792] 
+W0401 04:57:35.712000 19497 torch/distributed/run.py:792] *****************************************
+W0401 04:57:35.712000 19497 torch/distributed/run.py:792] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0401 04:57:35.712000 19497 torch/distributed/run.py:792] *****************************************

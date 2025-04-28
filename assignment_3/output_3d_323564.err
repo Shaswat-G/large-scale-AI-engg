@@ -1,0 +1,638 @@
+slurmstepd: error: couldn't chdir to `/workspace': No such file or directory: going to /tmp instead
+slurmstepd: error: couldn't chdir to `/workspace': No such file or directory: going to /tmp instead
+slurmstepd: error: couldn't chdir to `/workspace': No such file or directory: going to /tmp instead
+slurmstepd: error: couldn't chdir to `/workspace': No such file or directory: going to /tmp instead
+slurmstepd: error: couldn't chdir to `/workspace': No such file or directory: going to /tmp instead
+slurmstepd: error: couldn't chdir to `/workspace': No such file or directory: going to /tmp instead
+slurmstepd: error: couldn't chdir to `/workspace': No such file or directory: going to /tmp instead
+slurmstepd: error: couldn't chdir to `/workspace': No such file or directory: going to /tmp instead
+W0401 07:36:42.486000 181964 torch/distributed/run.py:792] 
+W0401 07:36:42.486000 181964 torch/distributed/run.py:792] *****************************************
+W0401 07:36:42.486000 181964 torch/distributed/run.py:792] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0401 07:36:42.486000 181964 torch/distributed/run.py:792] *****************************************
+W0401 07:36:49.996000 23009 torch/distributed/run.py:792] 
+W0401 07:36:49.996000 23009 torch/distributed/run.py:792] *****************************************
+W0401 07:36:49.996000 23009 torch/distributed/run.py:792] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0401 07:36:49.996000 23009 torch/distributed/run.py:792] *****************************************
+W0401 07:36:50.005000 95443 torch/distributed/run.py:792] 
+W0401 07:36:50.005000 95443 torch/distributed/run.py:792] *****************************************
+W0401 07:36:50.005000 95443 torch/distributed/run.py:792] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0401 07:36:50.005000 95443 torch/distributed/run.py:792] *****************************************
+W0401 07:36:50.005000 134410 torch/distributed/run.py:792] 
+W0401 07:36:50.005000 134410 torch/distributed/run.py:792] *****************************************
+W0401 07:36:50.005000 134410 torch/distributed/run.py:792] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0401 07:36:50.005000 134410 torch/distributed/run.py:792] *****************************************
+[rank10]:[E401 07:37:04.815635604 ProcessGroupNCCL.cpp:1291] [PG ID 0 PG GUID 0(default_pg) Rank 10] Exception thrown when waiting for future ProcessGroup abort: CUDA error: invalid device ordinal
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+Exception raised from c10_cuda_check_implementation at /opt/pytorch/pytorch/c10/cuda/CUDAException.cpp:43 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xd4 (0x40005e31bdd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xe4 (0x40005e2ce734 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x2e8 (0x40005e1f2bc8 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+frame #3: c10::cuda::ExchangeDevice(signed char) + 0x5c (0x40005e22e16c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::abortCommsFromMap(std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::shared_ptr<c10d::NCCLComm>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<c10d::NCCLComm> > > >&, std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0x130 (0x400017b1fb80 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #5: c10d::ProcessGroupNCCL::abortComms(std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0xa4 (0x400017b28414 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0x1028b24 (0x400017b28b24 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #7: <unknown function> + 0xeb1c1c (0x4000179b1c1c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #8: <unknown function> + 0x8abfc (0x40000d70abfc in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #9: <unknown function> + 0x1017218 (0x400017b17218 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #10: <unknown function> + 0xe1ae0 (0x40005e4b1ae0 in /usr/lib/aarch64-linux-gnu/libstdc++.so.6)
+frame #11: <unknown function> + 0x8597c (0x40000d70597c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #12: <unknown function> + 0xeba4c (0x40000d76ba4c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+
+[rank13]:[E401 07:37:04.381454563 ProcessGroupNCCL.cpp:1291] [PG ID 0 PG GUID 0(default_pg) Rank 13] Exception thrown when waiting for future ProcessGroup abort: CUDA error: invalid device ordinal
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+Exception raised from c10_cuda_check_implementation at /opt/pytorch/pytorch/c10/cuda/CUDAException.cpp:43 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xd4 (0x400070cfbdd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xe4 (0x400070cae734 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x2e8 (0x400070bd2bc8 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+frame #3: c10::cuda::ExchangeDevice(signed char) + 0x5c (0x400070c0e16c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::abortCommsFromMap(std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::shared_ptr<c10d::NCCLComm>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<c10d::NCCLComm> > > >&, std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0x130 (0x40002a4ffb80 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #5: c10d::ProcessGroupNCCL::abortComms(std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0xa4 (0x40002a508414 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0x1028b24 (0x40002a508b24 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #7: <unknown function> + 0xeb1c1c (0x40002a391c1c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #8: <unknown function> + 0x8abfc (0x4000200eabfc in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #9: <unknown function> + 0x1017218 (0x40002a4f7218 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #10: <unknown function> + 0xe1ae0 (0x400070e91ae0 in /usr/lib/aarch64-linux-gnu/libstdc++.so.6)
+frame #11: <unknown function> + 0x8597c (0x4000200e597c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #12: <unknown function> + 0xeba4c (0x40002014ba4c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+
+[rank9]:[E401 07:37:04.821589303 ProcessGroupNCCL.cpp:1291] [PG ID 0 PG GUID 0(default_pg) Rank 9] Exception thrown when waiting for future ProcessGroup abort: CUDA error: invalid device ordinal
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+Exception raised from c10_cuda_check_implementation at /opt/pytorch/pytorch/c10/cuda/CUDAException.cpp:43 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xd4 (0x40008016bdd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xe4 (0x40008011e734 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x2e8 (0x400080042bc8 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+frame #3: c10::cuda::ExchangeDevice(signed char) + 0x5c (0x40008007e16c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::abortCommsFromMap(std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::shared_ptr<c10d::NCCLComm>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<c10d::NCCLComm> > > >&, std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0x130 (0x40003996fb80 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #5: c10d::ProcessGroupNCCL::abortComms(std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0xa4 (0x400039978414 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0x1028b24 (0x400039978b24 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #7: <unknown function> + 0xeb1c1c (0x400039801c1c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #8: <unknown function> + 0x8abfc (0x40002f55abfc in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #9: <unknown function> + 0x1017218 (0x400039967218 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #10: <unknown function> + 0xe1ae0 (0x400080301ae0 in /usr/lib/aarch64-linux-gnu/libstdc++.so.6)
+frame #11: <unknown function> + 0x8597c (0x40002f55597c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #12: <unknown function> + 0xeba4c (0x40002f5bba4c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+
+[rank14]:[E401 07:37:04.388939996 ProcessGroupNCCL.cpp:1291] [PG ID 0 PG GUID 0(default_pg) Rank 14] Exception thrown when waiting for future ProcessGroup abort: CUDA error: invalid device ordinal
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+Exception raised from c10_cuda_check_implementation at /opt/pytorch/pytorch/c10/cuda/CUDAException.cpp:43 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xd4 (0x40005f87bdd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xe4 (0x40005f82e734 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x2e8 (0x40005f752bc8 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+frame #3: c10::cuda::ExchangeDevice(signed char) + 0x5c (0x40005f78e16c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::abortCommsFromMap(std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::shared_ptr<c10d::NCCLComm>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<c10d::NCCLComm> > > >&, std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0x130 (0x40001907fb80 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #5: c10d::ProcessGroupNCCL::abortComms(std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0xa4 (0x400019088414 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0x1028b24 (0x400019088b24 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #7: <unknown function> + 0xeb1c1c (0x400018f11c1c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #8: <unknown function> + 0x8abfc (0x40000ec6abfc in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #9: <unknown function> + 0x1017218 (0x400019077218 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #10: <unknown function> + 0xe1ae0 (0x40005fa11ae0 in /usr/lib/aarch64-linux-gnu/libstdc++.so.6)
+frame #11: <unknown function> + 0x8597c (0x40000ec6597c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #12: <unknown function> + 0xeba4c (0x40000eccba4c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+
+[rank6]:[E401 07:37:04.134192353 ProcessGroupNCCL.cpp:1291] [PG ID 0 PG GUID 0(default_pg) Rank 6] Exception thrown when waiting for future ProcessGroup abort: CUDA error: invalid device ordinal
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+Exception raised from c10_cuda_check_implementation at /opt/pytorch/pytorch/c10/cuda/CUDAException.cpp:43 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xd4 (0x40008f8abdd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xe4 (0x40008f85e734 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x2e8 (0x40008f782bc8 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+frame #3: c10::cuda::ExchangeDevice(signed char) + 0x5c (0x40008f7be16c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::abortCommsFromMap(std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::shared_ptr<c10d::NCCLComm>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<c10d::NCCLComm> > > >&, std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0x130 (0x4000490afb80 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #5: c10d::ProcessGroupNCCL::abortComms(std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0xa4 (0x4000490b8414 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0x1028b24 (0x4000490b8b24 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #7: <unknown function> + 0xeb1c1c (0x400048f41c1c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #8: <unknown function> + 0x8abfc (0x40003ec9abfc in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #9: <unknown function> + 0x1017218 (0x4000490a7218 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #10: <unknown function> + 0xe1ae0 (0x40008fa41ae0 in /usr/lib/aarch64-linux-gnu/libstdc++.so.6)
+frame #11: <unknown function> + 0x8597c (0x40003ec9597c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #12: <unknown function> + 0xeba4c (0x40003ecfba4c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+
+[rank5]:[E401 07:37:04.134192417 ProcessGroupNCCL.cpp:1291] [PG ID 0 PG GUID 0(default_pg) Rank 5] Exception thrown when waiting for future ProcessGroup abort: CUDA error: invalid device ordinal
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+Exception raised from c10_cuda_check_implementation at /opt/pytorch/pytorch/c10/cuda/CUDAException.cpp:43 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xd4 (0x4000704bbdd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xe4 (0x40007046e734 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x2e8 (0x400070392bc8 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+frame #3: c10::cuda::ExchangeDevice(signed char) + 0x5c (0x4000703ce16c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::abortCommsFromMap(std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::shared_ptr<c10d::NCCLComm>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<c10d::NCCLComm> > > >&, std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0x130 (0x400029cbfb80 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #5: c10d::ProcessGroupNCCL::abortComms(std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0xa4 (0x400029cc8414 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0x1028b24 (0x400029cc8b24 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #7: <unknown function> + 0xeb1c1c (0x400029b51c1c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #8: <unknown function> + 0x8abfc (0x40001f8aabfc in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #9: <unknown function> + 0x1017218 (0x400029cb7218 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #10: <unknown function> + 0xe1ae0 (0x400070651ae0 in /usr/lib/aarch64-linux-gnu/libstdc++.so.6)
+frame #11: <unknown function> + 0x8597c (0x40001f8a597c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #12: <unknown function> + 0xeba4c (0x40001f90ba4c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+
+[rank10]: Traceback (most recent call last):
+[rank10]:   File "/users/shagupta/scratch/assignment3d.py", line 96, in <module>
+[rank10]:     main()
+[rank10]:   File "/users/shagupta/scratch/assignment3d.py", line 92, in main
+[rank10]:     dist.destroy_process_group()
+[rank10]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 2085, in destroy_process_group
+[rank10]:     _shutdown_backend(pg_to_shutdown)
+[rank10]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 1759, in _shutdown_backend
+[rank10]:     backend._shutdown()
+[rank10]: torch.distributed.DistBackendError: [PG ID 0 PG GUID 0(default_pg) Rank 10] Exception thrown when waiting for future ProcessGroup abort: CUDA error: invalid device ordinal
+[rank10]: CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+[rank10]: For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+[rank10]: Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[rank10]: Exception raised from c10_cuda_check_implementation at /opt/pytorch/pytorch/c10/cuda/CUDAException.cpp:43 (most recent call first):
+[rank10]: frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xd4 (0x40005e31bdd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+[rank10]: frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xe4 (0x40005e2ce734 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+[rank10]: frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x2e8 (0x40005e1f2bc8 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+[rank10]: frame #3: c10::cuda::ExchangeDevice(signed char) + 0x5c (0x40005e22e16c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+[rank10]: frame #4: c10d::ProcessGroupNCCL::abortCommsFromMap(std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::shared_ptr<c10d::NCCLComm>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<c10d::NCCLComm> > > >&, std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0x130 (0x400017b1fb80 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank10]: frame #5: c10d::ProcessGroupNCCL::abortComms(std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0xa4 (0x400017b28414 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank10]: frame #6: <unknown function> + 0x1028b24 (0x400017b28b24 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank10]: frame #7: <unknown function> + 0xeb1c1c (0x4000179b1c1c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank10]: frame #8: <unknown function> + 0x8abfc (0x40000d70abfc in /usr/lib/aarch64-linux-gnu/libc.so.6)
+[rank10]: frame #9: <unknown function> + 0x1017218 (0x400017b17218 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank10]: frame #10: <unknown function> + 0xe1ae0 (0x40005e4b1ae0 in /usr/lib/aarch64-linux-gnu/libstdc++.so.6)
+[rank10]: frame #11: <unknown function> + 0x8597c (0x40000d70597c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+[rank10]: frame #12: <unknown function> + 0xeba4c (0x40000d76ba4c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+
+[rank9]: Traceback (most recent call last):
+[rank9]:   File "/users/shagupta/scratch/assignment3d.py", line 96, in <module>
+[rank9]:     main()
+[rank9]:   File "/users/shagupta/scratch/assignment3d.py", line 92, in main
+[rank9]:     dist.destroy_process_group()
+[rank9]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 2085, in destroy_process_group
+[rank9]:     _shutdown_backend(pg_to_shutdown)
+[rank9]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 1759, in _shutdown_backend
+[rank9]:     backend._shutdown()
+[rank9]: torch.distributed.DistBackendError: [PG ID 0 PG GUID 0(default_pg) Rank 9] Exception thrown when waiting for future ProcessGroup abort: CUDA error: invalid device ordinal
+[rank9]: CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+[rank9]: For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+[rank9]: Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[rank9]: Exception raised from c10_cuda_check_implementation at /opt/pytorch/pytorch/c10/cuda/CUDAException.cpp:43 (most recent call first):
+[rank9]: frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xd4 (0x40008016bdd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+[rank9]: frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xe4 (0x40008011e734 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+[rank9]: frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x2e8 (0x400080042bc8 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+[rank9]: frame #3: c10::cuda::ExchangeDevice(signed char) + 0x5c (0x40008007e16c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+[rank9]: frame #4: c10d::ProcessGroupNCCL::abortCommsFromMap(std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::shared_ptr<c10d::NCCLComm>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<c10d::NCCLComm> > > >&, std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0x130 (0x40003996fb80 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank9]: frame #5: c10d::ProcessGroupNCCL::abortComms(std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0xa4 (0x400039978414 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank9]: frame #6: <unknown function> + 0x1028b24 (0x400039978b24 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank9]: frame #7: <unknown function> + 0xeb1c1c (0x400039801c1c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank9]: frame #8: <unknown function> + 0x8abfc (0x40002f55abfc in /usr/lib/aarch64-linux-gnu/libc.so.6)
+[rank9]: frame #9: <unknown function> + 0x1017218 (0x400039967218 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank9]: frame #10: <unknown function> + 0xe1ae0 (0x400080301ae0 in /usr/lib/aarch64-linux-gnu/libstdc++.so.6)
+[rank9]: frame #11: <unknown function> + 0x8597c (0x40002f55597c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+[rank9]: frame #12: <unknown function> + 0xeba4c (0x40002f5bba4c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+
+[rank13]: Traceback (most recent call last):
+[rank13]:   File "/users/shagupta/scratch/assignment3d.py", line 96, in <module>
+[rank13]:     main()
+[rank13]:   File "/users/shagupta/scratch/assignment3d.py", line 92, in main
+[rank13]:     dist.destroy_process_group()
+[rank13]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 2085, in destroy_process_group
+[rank13]:     _shutdown_backend(pg_to_shutdown)
+[rank13]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 1759, in _shutdown_backend
+[rank13]:     backend._shutdown()
+[rank13]: torch.distributed.DistBackendError: [PG ID 0 PG GUID 0(default_pg) Rank 13] Exception thrown when waiting for future ProcessGroup abort: CUDA error: invalid device ordinal
+[rank13]: CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+[rank13]: For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+[rank13]: Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[rank13]: Exception raised from c10_cuda_check_implementation at /opt/pytorch/pytorch/c10/cuda/CUDAException.cpp:43 (most recent call first):
+[rank13]: frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xd4 (0x400070cfbdd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+[rank13]: frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xe4 (0x400070cae734 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+[rank13]: frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x2e8 (0x400070bd2bc8 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+[rank13]: frame #3: c10::cuda::ExchangeDevice(signed char) + 0x5c (0x400070c0e16c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+[rank13]: frame #4: c10d::ProcessGroupNCCL::abortCommsFromMap(std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::shared_ptr<c10d::NCCLComm>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<c10d::NCCLComm> > > >&, std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0x130 (0x40002a4ffb80 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank13]: frame #5: c10d::ProcessGroupNCCL::abortComms(std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0xa4 (0x40002a508414 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank13]: frame #6: <unknown function> + 0x1028b24 (0x40002a508b24 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank13]: frame #7: <unknown function> + 0xeb1c1c (0x40002a391c1c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank13]: frame #8: <unknown function> + 0x8abfc (0x4000200eabfc in /usr/lib/aarch64-linux-gnu/libc.so.6)
+[rank13]: frame #9: <unknown function> + 0x1017218 (0x40002a4f7218 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank13]: frame #10: <unknown function> + 0xe1ae0 (0x400070e91ae0 in /usr/lib/aarch64-linux-gnu/libstdc++.so.6)
+[rank13]: frame #11: <unknown function> + 0x8597c (0x4000200e597c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+[rank13]: frame #12: <unknown function> + 0xeba4c (0x40002014ba4c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+
+[rank14]: Traceback (most recent call last):
+[rank14]:   File "/users/shagupta/scratch/assignment3d.py", line 96, in <module>
+[rank14]:     main()
+[rank14]:   File "/users/shagupta/scratch/assignment3d.py", line 92, in main
+[rank14]:     dist.destroy_process_group()
+[rank14]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 2085, in destroy_process_group
+[rank14]:     _shutdown_backend(pg_to_shutdown)
+[rank14]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 1759, in _shutdown_backend
+[rank14]:     backend._shutdown()
+[rank14]: torch.distributed.DistBackendError: [PG ID 0 PG GUID 0(default_pg) Rank 14] Exception thrown when waiting for future ProcessGroup abort: CUDA error: invalid device ordinal
+[rank14]: CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+[rank14]: For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+[rank6]: Traceback (most recent call last):
+[rank6]:   File "/users/shagupta/scratch/assignment3d.py", line 96, in <module>
+[rank6]:     main()
+[rank6]:   File "/users/shagupta/scratch/assignment3d.py", line 92, in main
+[rank6]:     dist.destroy_process_group()
+[rank6]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 2085, in destroy_process_group
+[rank6]:     _shutdown_backend(pg_to_shutdown)
+[rank6]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 1759, in _shutdown_backend
+[rank6]:     backend._shutdown()
+[rank6]: torch.distributed.DistBackendError: [PG ID 0 PG GUID 0(default_pg) Rank 6] Exception thrown when waiting for future ProcessGroup abort: CUDA error: invalid device ordinal
+[rank6]: CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+[rank6]: For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+[rank14]: Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[rank14]: Exception raised from c10_cuda_check_implementation at /opt/pytorch/pytorch/c10/cuda/CUDAException.cpp:43 (most recent call first):
+[rank14]: frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xd4 (0x40005f87bdd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+[rank14]: frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xe4 (0x40005f82e734 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+[rank14]: frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x2e8 (0x40005f752bc8 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+[rank6]: Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[rank6]: Exception raised from c10_cuda_check_implementation at /opt/pytorch/pytorch/c10/cuda/CUDAException.cpp:43 (most recent call first):
+[rank6]: frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xd4 (0x40008f8abdd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+[rank6]: frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xe4 (0x40008f85e734 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+[rank6]: frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x2e8 (0x40008f782bc8 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+[rank14]: frame #3: c10::cuda::ExchangeDevice(signed char) + 0x5c (0x40005f78e16c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+[rank14]: frame #4: c10d::ProcessGroupNCCL::abortCommsFromMap(std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::shared_ptr<c10d::NCCLComm>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<c10d::NCCLComm> > > >&, std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0x130 (0x40001907fb80 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank6]: frame #3: c10::cuda::ExchangeDevice(signed char) + 0x5c (0x40008f7be16c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+[rank6]: frame #4: c10d::ProcessGroupNCCL::abortCommsFromMap(std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::shared_ptr<c10d::NCCLComm>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<c10d::NCCLComm> > > >&, std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0x130 (0x4000490afb80 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank14]: frame #5: c10d::ProcessGroupNCCL::abortComms(std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0xa4 (0x400019088414 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank14]: frame #6: <unknown function> + 0x1028b24 (0x400019088b24 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank14]: frame #7: <unknown function> + 0xeb1c1c (0x400018f11c1c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank14]: frame #8: <unknown function> + 0x8abfc (0x40000ec6abfc in /usr/lib/aarch64-linux-gnu/libc.so.6)
+[rank14]: frame #9: <unknown function> + 0x1017218 (0x400019077218 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank14]: frame #10: <unknown function> + 0xe1ae0 (0x40005fa11ae0 in /usr/lib/aarch64-linux-gnu/libstdc++.so.6)
+[rank14]: frame #11: <unknown function> + 0x8597c (0x40000ec6597c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+[rank6]: frame #5: c10d::ProcessGroupNCCL::abortComms(std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0xa4 (0x4000490b8414 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank6]: frame #6: <unknown function> + 0x1028b24 (0x4000490b8b24 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank6]: frame #7: <unknown function> + 0xeb1c1c (0x400048f41c1c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank6]: frame #8: <unknown function> + 0x8abfc (0x40003ec9abfc in /usr/lib/aarch64-linux-gnu/libc.so.6)
+[rank6]: frame #9: <unknown function> + 0x1017218 (0x4000490a7218 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank6]: frame #10: <unknown function> + 0xe1ae0 (0x40008fa41ae0 in /usr/lib/aarch64-linux-gnu/libstdc++.so.6)
+[rank6]: frame #11: <unknown function> + 0x8597c (0x40003ec9597c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+[rank14]: frame #12: <unknown function> + 0xeba4c (0x40000eccba4c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+
+[rank6]: frame #12: <unknown function> + 0xeba4c (0x40003ecfba4c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+
+[rank5]: Traceback (most recent call last):
+[rank5]:   File "/users/shagupta/scratch/assignment3d.py", line 96, in <module>
+[rank5]:     main()
+[rank5]:   File "/users/shagupta/scratch/assignment3d.py", line 92, in main
+[rank5]:     dist.destroy_process_group()
+[rank5]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 2085, in destroy_process_group
+[rank5]:     _shutdown_backend(pg_to_shutdown)
+[rank5]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 1759, in _shutdown_backend
+[rank5]:     backend._shutdown()
+[rank5]: torch.distributed.DistBackendError: [PG ID 0 PG GUID 0(default_pg) Rank 5] Exception thrown when waiting for future ProcessGroup abort: CUDA error: invalid device ordinal
+[rank5]: CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+[rank5]: For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+[rank5]: Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[rank5]: Exception raised from c10_cuda_check_implementation at /opt/pytorch/pytorch/c10/cuda/CUDAException.cpp:43 (most recent call first):
+[rank5]: frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xd4 (0x4000704bbdd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+[rank5]: frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xe4 (0x40007046e734 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+[rank5]: frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x2e8 (0x400070392bc8 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+[rank5]: frame #3: c10::cuda::ExchangeDevice(signed char) + 0x5c (0x4000703ce16c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+[rank5]: frame #4: c10d::ProcessGroupNCCL::abortCommsFromMap(std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::shared_ptr<c10d::NCCLComm>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<c10d::NCCLComm> > > >&, std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0x130 (0x400029cbfb80 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank5]: frame #5: c10d::ProcessGroupNCCL::abortComms(std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0xa4 (0x400029cc8414 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank5]: frame #6: <unknown function> + 0x1028b24 (0x400029cc8b24 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank5]: frame #7: <unknown function> + 0xeb1c1c (0x400029b51c1c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank5]: frame #8: <unknown function> + 0x8abfc (0x40001f8aabfc in /usr/lib/aarch64-linux-gnu/libc.so.6)
+[rank5]: frame #9: <unknown function> + 0x1017218 (0x400029cb7218 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank5]: frame #10: <unknown function> + 0xe1ae0 (0x400070651ae0 in /usr/lib/aarch64-linux-gnu/libstdc++.so.6)
+[rank5]: frame #11: <unknown function> + 0x8597c (0x40001f8a597c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+[rank5]: frame #12: <unknown function> + 0xeba4c (0x40001f90ba4c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+
+[rank12]:[E401 07:37:04.414904652 ProcessGroupNCCL.cpp:1291] [PG ID 0 PG GUID 0(default_pg) Rank 12] Exception thrown when waiting for future ProcessGroup abort: CUDA error: invalid device ordinal
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+Exception raised from c10_cuda_check_implementation at /opt/pytorch/pytorch/c10/cuda/CUDAException.cpp:43 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xd4 (0x40008e1ebdd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xe4 (0x40008e19e734 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x2e8 (0x40008e0c2bc8 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+frame #3: c10::cuda::ExchangeDevice(signed char) + 0x5c (0x40008e0fe16c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+[rank11]:[E401 07:37:04.849602876 ProcessGroupNCCL.cpp:1291] [PG ID 0 PG GUID 0(default_pg) Rank 11] Exception thrown when waiting for future ProcessGroup abort: CUDA error: invalid device ordinal
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+Exception raised from c10_cuda_check_implementation at /opt/pytorch/pytorch/c10/cuda/CUDAException.cpp:43 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xd4 (0x40005f5fbdd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #4: c10d::ProcessGroupNCCL::abortCommsFromMap(std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::shared_ptr<c10d::NCCLComm>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<c10d::NCCLComm> > > >&, std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0x130 (0x4000479efb80 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #5: c10d::ProcessGroupNCCL::abortComms(std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0xa4 (0x4000479f8414 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xe4 (0x40005f5ae734 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x2e8 (0x40005f4d2bc8 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+frame #3: c10::cuda::ExchangeDevice(signed char) + 0x5c (0x40005f50e16c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::abortCommsFromMap(std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::shared_ptr<c10d::NCCLComm>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<c10d::NCCLComm> > > >&, std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0x130 (0x400018dffb80 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #5: c10d::ProcessGroupNCCL::abortComms(std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0xa4 (0x400018e08414 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0x1028b24 (0x400018e08b24 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #7: <unknown function> + 0xeb1c1c (0x400018c91c1c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #8: <unknown function> + 0x8abfc (0x40000e9eabfc in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #9: <unknown function> + 0x1017218 (0x400018df7218 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #10: <unknown function> + 0xe1ae0 (0x40005f791ae0 in /usr/lib/aarch64-linux-gnu/libstdc++.so.6)
+frame #11: <unknown function> + 0x8597c (0x40000e9e597c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #12: <unknown function> + 0xeba4c (0x40000ea4ba4c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+
+frame #6: <unknown function> + 0x1028b24 (0x4000479f8b24 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #7: <unknown function> + 0xeb1c1c (0x400047881c1c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #8: <unknown function> + 0x8abfc (0x40003d5dabfc in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #9: <unknown function> + 0x1017218 (0x4000479e7218 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #10: <unknown function> + 0xe1ae0 (0x40008e381ae0 in /usr/lib/aarch64-linux-gnu/libstdc++.so.6)
+frame #11: <unknown function> + 0x8597c (0x40003d5d597c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #12: <unknown function> + 0xeba4c (0x40003d63ba4c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+
+[rank12]: Traceback (most recent call last):
+[rank12]:   File "/users/shagupta/scratch/assignment3d.py", line 96, in <module>
+[rank12]:     main()
+[rank12]:   File "/users/shagupta/scratch/assignment3d.py", line 92, in main
+[rank12]:     dist.destroy_process_group()
+[rank12]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 2085, in destroy_process_group
+[rank12]:     _shutdown_backend(pg_to_shutdown)
+[rank12]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 1759, in _shutdown_backend
+[rank12]:     backend._shutdown()
+[rank12]: torch.distributed.DistBackendError: [PG ID 0 PG GUID 0(default_pg) Rank 12] Exception thrown when waiting for future ProcessGroup abort: CUDA error: invalid device ordinal
+[rank12]: CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+[rank12]: For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+[rank12]: Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[rank12]: Exception raised from c10_cuda_check_implementation at /opt/pytorch/pytorch/c10/cuda/CUDAException.cpp:43 (most recent call first):
+[rank12]: frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xd4 (0x40008e1ebdd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+[rank12]: frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xe4 (0x40008e19e734 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+[rank12]: frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x2e8 (0x40008e0c2bc8 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+[rank12]: frame #3: c10::cuda::ExchangeDevice(signed char) + 0x5c (0x40008e0fe16c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+[rank12]: frame #4: c10d::ProcessGroupNCCL::abortCommsFromMap(std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::shared_ptr<c10d::NCCLComm>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<c10d::NCCLComm> > > >&, std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0x130 (0x4000479efb80 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank11]: Traceback (most recent call last):
+[rank11]:   File "/users/shagupta/scratch/assignment3d.py", line 96, in <module>
+[rank11]:     main()
+[rank11]:   File "/users/shagupta/scratch/assignment3d.py", line 92, in main
+[rank11]:     dist.destroy_process_group()
+[rank11]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 2085, in destroy_process_group
+[rank11]:     _shutdown_backend(pg_to_shutdown)
+[rank11]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 1759, in _shutdown_backend
+[rank11]:     backend._shutdown()
+[rank11]: torch.distributed.DistBackendError: [PG ID 0 PG GUID 0(default_pg) Rank 11] Exception thrown when waiting for future ProcessGroup abort: CUDA error: invalid device ordinal
+[rank11]: CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+[rank11]: For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+[rank11]: Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[rank11]: Exception raised from c10_cuda_check_implementation at /opt/pytorch/pytorch/c10/cuda/CUDAException.cpp:43 (most recent call first):
+[rank11]: frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xd4 (0x40005f5fbdd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+[rank11]: frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xe4 (0x40005f5ae734 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+[rank11]: frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x2e8 (0x40005f4d2bc8 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+[rank11]: frame #3: c10::cuda::ExchangeDevice(signed char) + 0x5c (0x40005f50e16c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+[rank11]: frame #4: c10d::ProcessGroupNCCL::abortCommsFromMap(std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::shared_ptr<c10d::NCCLComm>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<c10d::NCCLComm> > > >&, std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0x130 (0x400018dffb80 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank11]: frame #5: c10d::ProcessGroupNCCL::abortComms(std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0xa4 (0x400018e08414 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank11]: frame #6: <unknown function> + 0x1028b24 (0x400018e08b24 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank11]: frame #7: <unknown function> + 0xeb1c1c (0x400018c91c1c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank11]: frame #8: <unknown function> + 0x8abfc (0x40000e9eabfc in /usr/lib/aarch64-linux-gnu/libc.so.6)
+[rank11]: frame #9: <unknown function> + 0x1017218 (0x400018df7218 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank11]: frame #10: <unknown function> + 0xe1ae0 (0x40005f791ae0 in /usr/lib/aarch64-linux-gnu/libstdc++.so.6)
+[rank11]: frame #11: <unknown function> + 0x8597c (0x40000e9e597c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+[rank11]: frame #12: <unknown function> + 0xeba4c (0x40000ea4ba4c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+
+[rank12]: frame #5: c10d::ProcessGroupNCCL::abortComms(std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0xa4 (0x4000479f8414 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank12]: frame #6: <unknown function> + 0x1028b24 (0x4000479f8b24 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank12]: frame #7: <unknown function> + 0xeb1c1c (0x400047881c1c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank12]: frame #8: <unknown function> + 0x8abfc (0x40003d5dabfc in /usr/lib/aarch64-linux-gnu/libc.so.6)
+[rank12]: frame #9: <unknown function> + 0x1017218 (0x4000479e7218 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank12]: frame #10: <unknown function> + 0xe1ae0 (0x40008e381ae0 in /usr/lib/aarch64-linux-gnu/libstdc++.so.6)
+[rank12]: frame #11: <unknown function> + 0x8597c (0x40003d5d597c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+[rank12]: frame #12: <unknown function> + 0xeba4c (0x40003d63ba4c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+
+[rank8]:[E401 07:37:04.857997586 ProcessGroupNCCL.cpp:1291] [PG ID 0 PG GUID 0(default_pg) Rank 8] Exception thrown when waiting for future ProcessGroup abort: CUDA error: invalid device ordinal
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+Exception raised from c10_cuda_check_implementation at /opt/pytorch/pytorch/c10/cuda/CUDAException.cpp:43 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xd4 (0x40006257bdd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xe4 (0x40006252e734 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x2e8 (0x400062452bc8 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+frame #3: c10::cuda::ExchangeDevice(signed char) + 0x5c (0x40006248e16c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::abortCommsFromMap(std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::shared_ptr<c10d::NCCLComm>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<c10d::NCCLComm> > > >&, std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0x130 (0x40001bd7fb80 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #5: c10d::ProcessGroupNCCL::abortComms(std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0xa4 (0x40001bd88414 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0x1028b24 (0x40001bd88b24 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #7: <unknown function> + 0xeb1c1c (0x40001bc11c1c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #8: <unknown function> + 0x8abfc (0x40001196abfc in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #9: <unknown function> + 0x1017218 (0x40001bd77218 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #10: <unknown function> + 0xe1ae0 (0x400062711ae0 in /usr/lib/aarch64-linux-gnu/libstdc++.so.6)
+frame #11: <unknown function> + 0x8597c (0x40001196597c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #12: <unknown function> + 0xeba4c (0x4000119cba4c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+
+[rank7]:[E401 07:37:04.167879092 ProcessGroupNCCL.cpp:1291] [PG ID 0 PG GUID 0(default_pg) Rank 7] Exception thrown when waiting for future ProcessGroup abort: CUDA error: invalid device ordinal
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+Exception raised from c10_cuda_check_implementation at /opt/pytorch/pytorch/c10/cuda/CUDAException.cpp:43 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xd4 (0x40005fb0bdd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xe4 (0x40005fabe734 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x2e8 (0x40005f9e2bc8 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+frame #3: c10::cuda::ExchangeDevice(signed char) + 0x5c (0x40005fa1e16c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::abortCommsFromMap(std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::shared_ptr<c10d::NCCLComm>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<c10d::NCCLComm> > > >&, std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0x130 (0x40001930fb80 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #5: c10d::ProcessGroupNCCL::abortComms(std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0xa4 (0x400019318414 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0x1028b24 (0x400019318b24 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #7: <unknown function> + 0xeb1c1c (0x4000191a1c1c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #8: <unknown function> + 0x8abfc (0x40000eefabfc in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #9: <unknown function> + 0x1017218 (0x400019307218 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #10: <unknown function> + 0xe1ae0 (0x40005fca1ae0 in /usr/lib/aarch64-linux-gnu/libstdc++.so.6)
+frame #11: <unknown function> + 0x8597c (0x40000eef597c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #12: <unknown function> + 0xeba4c (0x40000ef5ba4c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+
+[rank8]: Traceback (most recent call last):
+[rank8]:   File "/users/shagupta/scratch/assignment3d.py", line 96, in <module>
+[rank8]:     main()
+[rank8]:   File "/users/shagupta/scratch/assignment3d.py", line 92, in main
+[rank8]:     dist.destroy_process_group()
+[rank8]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 2085, in destroy_process_group
+[rank8]:     _shutdown_backend(pg_to_shutdown)
+[rank8]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 1759, in _shutdown_backend
+[rank8]:     backend._shutdown()
+[rank8]: torch.distributed.DistBackendError: [PG ID 0 PG GUID 0(default_pg) Rank 8] Exception thrown when waiting for future ProcessGroup abort: CUDA error: invalid device ordinal
+[rank8]: CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+[rank8]: For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+[rank8]: Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[rank8]: Exception raised from c10_cuda_check_implementation at /opt/pytorch/pytorch/c10/cuda/CUDAException.cpp:43 (most recent call first):
+[rank8]: frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xd4 (0x40006257bdd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+[rank8]: frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xe4 (0x40006252e734 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+[rank8]: frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x2e8 (0x400062452bc8 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+[rank8]: frame #3: c10::cuda::ExchangeDevice(signed char) + 0x5c (0x40006248e16c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+[rank8]: frame #4: c10d::ProcessGroupNCCL::abortCommsFromMap(std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::shared_ptr<c10d::NCCLComm>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<c10d::NCCLComm> > > >&, std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0x130 (0x40001bd7fb80 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank8]: frame #5: c10d::ProcessGroupNCCL::abortComms(std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0xa4 (0x40001bd88414 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank8]: frame #6: <unknown function> + 0x1028b24 (0x40001bd88b24 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank8]: frame #7: <unknown function> + 0xeb1c1c (0x40001bc11c1c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank8]: frame #8: <unknown function> + 0x8abfc (0x40001196abfc in /usr/lib/aarch64-linux-gnu/libc.so.6)
+[rank8]: frame #9: <unknown function> + 0x1017218 (0x40001bd77218 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank8]: frame #10: <unknown function> + 0xe1ae0 (0x400062711ae0 in /usr/lib/aarch64-linux-gnu/libstdc++.so.6)
+[rank8]: frame #11: <unknown function> + 0x8597c (0x40001196597c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+[rank8]: frame #12: <unknown function> + 0xeba4c (0x4000119cba4c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+
+[rank7]: Traceback (most recent call last):
+[rank7]:   File "/users/shagupta/scratch/assignment3d.py", line 96, in <module>
+[rank7]:     main()
+[rank7]:   File "/users/shagupta/scratch/assignment3d.py", line 92, in main
+[rank7]:     dist.destroy_process_group()
+[rank7]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 2085, in destroy_process_group
+[rank7]:     _shutdown_backend(pg_to_shutdown)
+[rank7]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 1759, in _shutdown_backend
+[rank7]:     backend._shutdown()
+[rank7]: torch.distributed.DistBackendError: [PG ID 0 PG GUID 0(default_pg) Rank 7] Exception thrown when waiting for future ProcessGroup abort: CUDA error: invalid device ordinal
+[rank7]: CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+[rank7]: For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+[rank7]: Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[rank7]: Exception raised from c10_cuda_check_implementation at /opt/pytorch/pytorch/c10/cuda/CUDAException.cpp:43 (most recent call first):
+[rank7]: frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xd4 (0x40005fb0bdd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+[rank7]: frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xe4 (0x40005fabe734 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+[rank7]: frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x2e8 (0x40005f9e2bc8 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+[rank7]: frame #3: c10::cuda::ExchangeDevice(signed char) + 0x5c (0x40005fa1e16c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+[rank7]: frame #4: c10d::ProcessGroupNCCL::abortCommsFromMap(std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::shared_ptr<c10d::NCCLComm>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<c10d::NCCLComm> > > >&, std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0x130 (0x40001930fb80 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank7]: frame #5: c10d::ProcessGroupNCCL::abortComms(std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0xa4 (0x400019318414 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank7]: frame #6: <unknown function> + 0x1028b24 (0x400019318b24 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank7]: frame #7: <unknown function> + 0xeb1c1c (0x4000191a1c1c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank7]: frame #8: <unknown function> + 0x8abfc (0x40000eefabfc in /usr/lib/aarch64-linux-gnu/libc.so.6)
+[rank7]: frame #9: <unknown function> + 0x1017218 (0x400019307218 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank7]: frame #10: <unknown function> + 0xe1ae0 (0x40005fca1ae0 in /usr/lib/aarch64-linux-gnu/libstdc++.so.6)
+[rank7]: frame #11: <unknown function> + 0x8597c (0x40000eef597c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+[rank7]: frame #12: <unknown function> + 0xeba4c (0x40000ef5ba4c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+
+[rank4]:[E401 07:37:05.830072398 ProcessGroupNCCL.cpp:1291] [PG ID 0 PG GUID 0(default_pg) Rank 4] Exception thrown when waiting for future ProcessGroup abort: CUDA error: invalid device ordinal
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+Exception raised from c10_cuda_check_implementation at /opt/pytorch/pytorch/c10/cuda/CUDAException.cpp:43 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xd4 (0x400077c5bdd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xe4 (0x400077c0e734 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x2e8 (0x400077b32bc8 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+frame #3: c10::cuda::ExchangeDevice(signed char) + 0x5c (0x400077b6e16c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::abortCommsFromMap(std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::shared_ptr<c10d::NCCLComm>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<c10d::NCCLComm> > > >&, std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0x130 (0x40003145fb80 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #5: c10d::ProcessGroupNCCL::abortComms(std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0xa4 (0x400031468414 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0x1028b24 (0x400031468b24 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #7: <unknown function> + 0xeb1c1c (0x4000312f1c1c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #8: <unknown function> + 0x8abfc (0x40002704abfc in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #9: <unknown function> + 0x1017218 (0x400031457218 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #10: <unknown function> + 0xe1ae0 (0x400077df1ae0 in /usr/lib/aarch64-linux-gnu/libstdc++.so.6)
+frame #11: <unknown function> + 0x8597c (0x40002704597c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #12: <unknown function> + 0xeba4c (0x4000270aba4c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+
+[rank15]:[E401 07:37:05.086417949 ProcessGroupNCCL.cpp:1291] [PG ID 0 PG GUID 0(default_pg) Rank 15] Exception thrown when waiting for future ProcessGroup abort: CUDA error: invalid device ordinal
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+Exception raised from c10_cuda_check_implementation at /opt/pytorch/pytorch/c10/cuda/CUDAException.cpp:43 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xd4 (0x40005bb9bdd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xe4 (0x40005bb4e734 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x2e8 (0x40005ba72bc8 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+frame #3: c10::cuda::ExchangeDevice(signed char) + 0x5c (0x40005baae16c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::abortCommsFromMap(std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::shared_ptr<c10d::NCCLComm>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<c10d::NCCLComm> > > >&, std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0x130 (0x40001539fb80 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #5: c10d::ProcessGroupNCCL::abortComms(std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0xa4 (0x4000153a8414 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0x1028b24 (0x4000153a8b24 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #7: <unknown function> + 0xeb1c1c (0x400015231c1c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #8: <unknown function> + 0x8abfc (0x40000af8abfc in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #9: <unknown function> + 0x1017218 (0x400015397218 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #10: <unknown function> + 0xe1ae0 (0x40005bd31ae0 in /usr/lib/aarch64-linux-gnu/libstdc++.so.6)
+frame #11: <unknown function> + 0x8597c (0x40000af8597c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+frame #12: <unknown function> + 0xeba4c (0x40000afeba4c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+
+[rank4]: Traceback (most recent call last):
+[rank4]:   File "/users/shagupta/scratch/assignment3d.py", line 96, in <module>
+[rank4]:     main()
+[rank4]:   File "/users/shagupta/scratch/assignment3d.py", line 92, in main
+[rank4]:     dist.destroy_process_group()
+[rank4]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 2085, in destroy_process_group
+[rank4]:     _shutdown_backend(pg_to_shutdown)
+[rank4]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 1759, in _shutdown_backend
+[rank4]:     backend._shutdown()
+[rank4]: torch.distributed.DistBackendError: [PG ID 0 PG GUID 0(default_pg) Rank 4] Exception thrown when waiting for future ProcessGroup abort: CUDA error: invalid device ordinal
+[rank4]: CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+[rank4]: For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+[rank4]: Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[rank4]: Exception raised from c10_cuda_check_implementation at /opt/pytorch/pytorch/c10/cuda/CUDAException.cpp:43 (most recent call first):
+[rank4]: frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xd4 (0x400077c5bdd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+[rank4]: frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xe4 (0x400077c0e734 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+[rank4]: frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x2e8 (0x400077b32bc8 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+[rank4]: frame #3: c10::cuda::ExchangeDevice(signed char) + 0x5c (0x400077b6e16c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+[rank4]: frame #4: c10d::ProcessGroupNCCL::abortCommsFromMap(std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::shared_ptr<c10d::NCCLComm>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<c10d::NCCLComm> > > >&, std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0x130 (0x40003145fb80 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank4]: frame #5: c10d::ProcessGroupNCCL::abortComms(std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0xa4 (0x400031468414 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank4]: frame #6: <unknown function> + 0x1028b24 (0x400031468b24 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank4]: frame #7: <unknown function> + 0xeb1c1c (0x4000312f1c1c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank4]: frame #8: <unknown function> + 0x8abfc (0x40002704abfc in /usr/lib/aarch64-linux-gnu/libc.so.6)
+[rank4]: frame #9: <unknown function> + 0x1017218 (0x400031457218 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank4]: frame #10: <unknown function> + 0xe1ae0 (0x400077df1ae0 in /usr/lib/aarch64-linux-gnu/libstdc++.so.6)
+[rank4]: frame #11: <unknown function> + 0x8597c (0x40002704597c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+[rank4]: frame #12: <unknown function> + 0xeba4c (0x4000270aba4c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+
+[rank15]: Traceback (most recent call last):
+[rank15]:   File "/users/shagupta/scratch/assignment3d.py", line 96, in <module>
+[rank15]:     main()
+[rank15]:   File "/users/shagupta/scratch/assignment3d.py", line 92, in main
+[rank15]:     dist.destroy_process_group()
+[rank15]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 2085, in destroy_process_group
+[rank15]:     _shutdown_backend(pg_to_shutdown)
+[rank15]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 1759, in _shutdown_backend
+[rank15]:     backend._shutdown()
+[rank15]: torch.distributed.DistBackendError: [PG ID 0 PG GUID 0(default_pg) Rank 15] Exception thrown when waiting for future ProcessGroup abort: CUDA error: invalid device ordinal
+[rank15]: CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+[rank15]: For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+[rank15]: Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[rank15]: Exception raised from c10_cuda_check_implementation at /opt/pytorch/pytorch/c10/cuda/CUDAException.cpp:43 (most recent call first):
+[rank15]: frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xd4 (0x40005bb9bdd4 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+[rank15]: frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xe4 (0x40005bb4e734 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+[rank15]: frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x2e8 (0x40005ba72bc8 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+[rank15]: frame #3: c10::cuda::ExchangeDevice(signed char) + 0x5c (0x40005baae16c in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+[rank15]: frame #4: c10d::ProcessGroupNCCL::abortCommsFromMap(std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::shared_ptr<c10d::NCCLComm>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<c10d::NCCLComm> > > >&, std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0x130 (0x40001539fb80 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank15]: frame #5: c10d::ProcessGroupNCCL::abortComms(std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) + 0xa4 (0x4000153a8414 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank15]: frame #6: <unknown function> + 0x1028b24 (0x4000153a8b24 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank15]: frame #7: <unknown function> + 0xeb1c1c (0x400015231c1c in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank15]: frame #8: <unknown function> + 0x8abfc (0x40000af8abfc in /usr/lib/aarch64-linux-gnu/libc.so.6)
+[rank15]: frame #9: <unknown function> + 0x1017218 (0x400015397218 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+[rank15]: frame #10: <unknown function> + 0xe1ae0 (0x40005bd31ae0 in /usr/lib/aarch64-linux-gnu/libstdc++.so.6)
+[rank15]: frame #11: <unknown function> + 0x8597c (0x40000af8597c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+[rank15]: frame #12: <unknown function> + 0xeba4c (0x40000afeba4c in /usr/lib/aarch64-linux-gnu/libc.so.6)
+
+[W401 07:42:06.055343721 socket.cpp:464] [c10d] waitForInput: poll for socket SocketImpl(fd=11, addr=[nid007422]:41572, remote=[nid007422]:12345) returned 0, likely a timeout
+[W401 07:42:06.056186510 socket.cpp:489] [c10d] waitForInput: socket SocketImpl(fd=11, addr=[nid007422]:41572, remote=[nid007422]:12345) timed out after 300000ms
+E0401 07:42:06.946000 181964 torch/distributed/elastic/agent/server/api.py:954] Error waiting on exit barrier. Elapsed: 300.10527300834656 seconds
+E0401 07:42:06.946000 181964 torch/distributed/elastic/agent/server/api.py:954] Traceback (most recent call last):
+E0401 07:42:06.946000 181964 torch/distributed/elastic/agent/server/api.py:954]   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/elastic/agent/server/api.py", line 940, in _exit_barrier
+E0401 07:42:06.946000 181964 torch/distributed/elastic/agent/server/api.py:954]     store_util.barrier(
+E0401 07:42:06.946000 181964 torch/distributed/elastic/agent/server/api.py:954]   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/elastic/utils/store.py", line 203, in barrier
+E0401 07:42:06.946000 181964 torch/distributed/elastic/agent/server/api.py:954]     raise e
+E0401 07:42:06.946000 181964 torch/distributed/elastic/agent/server/api.py:954]   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/elastic/utils/store.py", line 200, in barrier
+E0401 07:42:06.946000 181964 torch/distributed/elastic/agent/server/api.py:954]     store.wait([last_member_key])
+E0401 07:42:06.946000 181964 torch/distributed/elastic/agent/server/api.py:954] torch.distributed.DistStoreError: wait timeout after 300000ms, keys: /none/torchelastic/agent/terminal_state/last_member
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+W0401 07:45:48.040000 95443 torch/distributed/elastic/agent/server/api.py:719] Received 15 death signal, shutting down workers
+W0401 07:45:48.041000 134410 torch/distributed/elastic/agent/server/api.py:719] Received 15 death signal, shutting down workers
+W0401 07:45:48.041000 95443 torch/distributed/elastic/multiprocessing/api.py:897] Sending process 95831 closing signal SIGTERM
+--- Logging error ---
+W0401 07:45:48.041000 134410 torch/distributed/elastic/multiprocessing/api.py:897] Sending process 134794 closing signal SIGTERM
+W0401 07:45:48.042000 95443 torch/distributed/elastic/multiprocessing/api.py:897] Sending process 95832 closing signal SIGTERM
+W0401 07:45:48.042000 134410 torch/distributed/elastic/multiprocessing/api.py:897] Sending process 134795 closing signal SIGTERM
+W0401 07:45:48.042000 95443 torch/distributed/elastic/multiprocessing/api.py:897] Sending process 95833 closing signal SIGTERM
+W0401 07:45:48.042000 134410 torch/distributed/elastic/multiprocessing/api.py:897] Sending process 134796 closing signal SIGTERM
+W0401 07:45:48.042000 95443 torch/distributed/elastic/multiprocessing/api.py:897] Sending process 95834 closing signal SIGTERM
+W0401 07:45:48.043000 134410 torch/distributed/elastic/multiprocessing/api.py:897] Sending process 134797 closing signal SIGTERM
+slurmstepd: error: *** JOB 323564 ON nid007422 CANCELLED AT 2025-04-01T07:45:48 DUE TO TIME LIMIT ***
+srun: forcing job termination
+srun: got SIGCONT
